@@ -1,0 +1,71 @@
+.galeria {
+  margin-top: 70px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(320px, 1fr)); /* Definimos 4 columnas */
+    grid-auto-rows: minmax(320px, auto); /* Ajustamos las filas */
+    grid-auto-flow: dense;
+    gap: 10px;
+}
+.item {
+  overflow: hidden;
+}
+.item img,
+.item video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+.item img:not(:hover),
+.item video:not(:hover) {
+  filter: grayscale(1);
+}
+.item img:hover {
+  transform-origin: top;
+  transform: scale(1.5);
+}
+.cuadrado {
+  grid-column: auto / span 1;
+  grid-row: auto / span 1;
+}
+
+.horizontal {
+  grid-column: auto / span 2;
+  grid-row: auto / span 1;
+}
+
+.vertical {
+  grid-column: auto / span 1;
+  grid-row: auto / span 2;
+}
+@media (max-width: 1280px) {
+  .galeria {
+      grid-template-columns: repeat(3, minmax(320px, 1fr)); /* 3 columnas en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 960px) {
+  .galeria {
+      grid-template-columns: repeat(2, minmax(320px, 1fr)); /* 2 columnas en pantallas aún más pequeñas */
+  }
+}
+
+@media (max-width: 640px) {
+  .galeria {
+      grid-template-columns: repeat(1, minmax(320px, 1fr)); /* 1 columna en pantallas móviles */
+  }
+  .cuadrado, .horizontal{
+    grid-column: auto/span 1;
+    grid-row: auto/span 1;
+  }
+}
+@media (max-width: 540px) {
+  .galeria {
+      grid-template-columns: repeat(1, minmax(320px, 1fr));
+  }
+  .cuadrado, .horizontal{
+    grid-column: auto/span 1;
+    grid-row: auto/span 1;
+  }
+}
