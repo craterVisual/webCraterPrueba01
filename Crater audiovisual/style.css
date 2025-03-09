@@ -37,6 +37,7 @@ h1 span:nth-child(1) {
 h1 span:nth-child(2) {
   font-weight: 600;
 }
+
 h2 {
   margin: 25px 0;
   font-size: 2.5rem;
@@ -611,6 +612,10 @@ form button:hover {
 
 /***********************HASTA 500PX***********************/
 @media (max-width: 780px){
+h1 {
+  font-size: 2em;
+  padding-left: 20px;
+}
 #logoYnav{
   justify-content: right;
   background-color: transparent;
@@ -745,9 +750,162 @@ flex-basis: 100%;
 
 
 
+/***********************HASTA 420PX***********************/
+
+
+
+
+
+@media (max-width: 420px){
+  h1{
+    font-size: 32px;
+  }
+  .sec>h2{
+    position: sticky;
+    font-size: 36px;
+    width: 100%;
+    top:  14px;
+    margin: 8px 0;
+    z-index: 4;
+  }
+  #logoYnav{
+    justify-content: right;
+    background-color: transparent;
+    width: 100vw;
+    height: 50vh;
+  }
+  .labelBoton{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+  }
+  #isologo{
+    width: 100%;
+    height: 100%;
+  }
+  #logoWebB3{
+    display: none;
+  }
+  #logoMovile{
+    display: block;
+    scale: 1;
+  }
+  #menuNav{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    width: 80%;
+    height: 50vh;
+    overflow: hidden;
+    transition: right 1s ease-out;
+  }
+  #menuNav a {
+    width: 100%;
+    padding: 10px 0 0 10px;
+  }
+  #menuNav a li{
+    padding: 10px;
+  }
+  .ul a:hover .navLi {
+    transform: scale(1.1);
+  }
+  #botonMenu:checked+.labelBoton #logoMovile{
+    animation: rotacion 1s ease-in-out;
+  }
+  @keyframes rotacion {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  #botonMenu:checked+.labelBoton+#menuNav{
+    right:0;
+  }
+  #botonMenu:not(:checked)+.labelBoton #logoMovile{
+    animation: rotacionInversa 1s ease-in-out;
+  }
+  @keyframes rotacionInversa {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  /*************SERVICIOS***************/
+  #servicios article.flx.flxRow.flxStrech{
+    height: 100vh;
+    flex-direction: column;
+  }
+  #servicios .trabajos{
+    height: 33vh;
+  }
+  .trabajos h3{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+  }
+  .trabajos:hover {
+    background-color: grey;
+    border: solid 1px white;
+    color: white;
+    filter: grayscale(0);
+  }
+  .trabajos:hover h3 {
+    transform: translateY(40%);
+    font-size: 42px;
+  }
+  /*************PROYECTOS***************/
+  .proceso img{
+    height: 200%;
+    bottom: 50%;
+    right:  50%;
+  }
+  /************FORMULARIO*************/
+  #form .flx.flxRow.w100.padd10p{
+    padding: 0;
+    flex-direction: column;
+  }
+  #form .flx.flxRow.w100.padd10p article{
+    width: 100%;
+  }
+  #form .flx.flxRow.w100.padd10p article h3{
+    font-size: 16px;
+  }
+  #form .flx.flxRow.w100.padd10p article h4{
+    font-size: 14px;
+  }
+  #form .flx.flxRow.w100.padd10p article .w80{
+    padding: 5px;
+    width: 100%;
+  }
+  /*****************RESEÑAS*****************/
+  #reseñas .flx.flxCol.flxCenter.w80{
+  width: 100%;
+  }
+  .comentario{
+  flex-basis: 100%;
+  }
+  form {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: grey;
+    box-shadow: none;
+  }
+  }
+
+
+
+
 /***********************HASTA 320PX***********************/
-
-
 
 
 
